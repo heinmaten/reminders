@@ -1,0 +1,59 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.aside-site-nav {}
+
+.aside-site-nav__list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 8px;
+
+  width: 100%;
+}
+
+.aside-site-nav__item {}
+
+.aside-site-nav__item-link {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  row-gap: 8px;
+
+  padding: 8px;
+  text-decoration: none;
+
+  background-color: $aside-site-nav-link-bg-dark;
+  border-radius: 8px;
+}
+
+.aside-site-nav__item-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  background-color: bisque;
+  border-radius: 50%;
+}
+
+.aside-site-nav__item-title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  margin: 0;
+
+  color: $text-color-light;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+
+.aside-site-nav__item-counter {
+  margin: 0;
+  grid-column-start: 2;
+  grid-row-start: 1;
+
+  color: $text-color-light;
+  font-size: 20px;
+}

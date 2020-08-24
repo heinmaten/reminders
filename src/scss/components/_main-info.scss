@@ -1,0 +1,37 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.main-info {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  height: 36px;
+  padding: 0 16px;
+
+  font-size: 13px;
+  line-height: 13px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 0;
+
+    height: 1px;
+    background-color: #343434;
+  }
+}
+
+.main-info__counter {
+  margin-right: 8px;
+}
+
+.main-info__text {
+  margin: 0;
+}
+
+.main-info__toggle-button {
+  margin-left: auto;
+}

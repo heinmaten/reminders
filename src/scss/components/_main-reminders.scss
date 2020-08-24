@@ -1,0 +1,133 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.main-reminders {
+  padding-left: 8px;
+}
+
+.main-reminders__list {
+  @include reset-list;
+}
+
+.main-reminders__item,
+.main-reminders__item-edit {
+  position: relative;
+  min-height: 32px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 36px;
+
+    height: 1px;
+    background-color: #343434;
+  }
+}
+
+.main-reminders__item-wrapper {
+  display: flex;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 4px;
+}
+
+.main-reminders__item-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  margin-top: -4px;
+
+  cursor: pointer;
+}
+
+.main-reminders__item-checkbox {
+  &:focus+.main-reminders__item-checkbox-icon {
+    box-shadow: 0 0 1px 4px #000,
+      0 0 1px 5px #147EFF,
+      0 0 1px 6px #fff;
+  }
+
+  &:checked+.main-reminders__item-checkbox-icon {
+    border-color: #147EFF;
+
+    &::before {
+      background-color: #147EFF;
+    }
+  }
+}
+
+.main-reminders__item-checkbox-icon {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  border: 1px solid #AEAEAE;
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.main-reminders__item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.main-reminders__item-reminder,
+.main-reminders__item-note {
+  margin: 0;
+  padding: 4px;
+  font-size: 13px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.main-reminders__item-note {
+  color: #AEAEAE;
+}
+
+
+.main-reminders__item-reminder-input,
+.main-reminders__item-note-input {
+  margin-bottom: 4px;
+  padding: 4px 4px;
+
+  font-size: 13px;
+  color: #fff;
+  background-color: #464646;
+
+  border: none;
+  border-radius: 4px;
+
+  outline: none;
+  caret-color: #fff;
+
+  &:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #147EFF;
+  }
+}
+
+.main-reminders__item-note-input {
+  margin-bottom: 1px;
+}

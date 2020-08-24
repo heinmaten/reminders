@@ -1,0 +1,64 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.aside-user-nav {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 -16px;
+}
+
+.aside-user-nav__title {
+  margin: 0;
+  margin-left: 16px;
+
+  color: $text-color-light;
+  font-size: 13px;
+}
+
+.aside-user-nav__list {
+  @include reset-list;
+}
+
+.aside-user-nav__item {}
+
+.aside-user-nav__item-link {
+  display: flex;
+  align-items: center;
+  padding: 0 16px ;
+
+  height: 36px;
+
+  color: $text-color-light;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color: #323232, $amount: 10);
+  }
+}
+
+.aside-user-nav__item-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  margin-right: 8px;
+
+  background-color: tomato;
+  border-radius: 50%;
+}
+
+.aside-user-nav__item-title {
+  margin: 0;
+
+  font-size: 13px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.aside-user-nav__item-counter {
+  margin: 0;
+  margin-left: auto;
+  padding-left: 8px;
+}
