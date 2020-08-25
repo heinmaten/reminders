@@ -1,9 +1,9 @@
 @import "../utils/mixins";
 @import "../utils/variables";
 
-.aside-site-nav {}
+.site-nav {}
 
-.aside-site-nav__list {
+.site-nav__list {
   @include reset-list;
 
   display: grid;
@@ -15,9 +15,9 @@
   width: 100%;
 }
 
-.aside-site-nav__item {}
+.site-nav__item {}
 
-.aside-site-nav__item-link {
+.site-nav__item-link {
   display: grid;
   grid-template-columns: 1fr max-content;
   row-gap: 8px;
@@ -27,9 +27,13 @@
 
   background-color: $aside-site-nav-link-bg-dark;
   border-radius: 8px;
+
+  &:focus {
+    @include new-outline;
+  }
 }
 
-.aside-site-nav__item-icon {
+.site-nav__item-icon {
   display: block;
   width: 24px;
   height: 24px;
@@ -38,7 +42,7 @@
   border-radius: 50%;
 }
 
-.aside-site-nav__item-title {
+.site-nav__item-title {
   grid-column-start: 1;
   grid-column-end: 3;
   margin: 0;
@@ -49,7 +53,7 @@
 }
 
 
-.aside-site-nav__item-counter {
+.site-nav__item-counter {
   margin: 0;
   grid-column-start: 2;
   grid-row-start: 1;

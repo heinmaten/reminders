@@ -10,26 +10,47 @@
   @include reset-button;
 
   position: relative;
-  height: 36px;
+  height: 32px;
   padding-left: 32px;
   padding-right: 8px;
+
+  display: flex;
+  align-items: center;
 
   color: $text-color-light;
   font-size: 13px;
   line-height: 32px;
+  border-radius: 4px;
 
+  &:focus {
+    @include new-outline;
+  }
 
-  &::before {
-    content: "";
+  &:hover {
+    color: #fff;
+
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  &:active {
+    color: rgba($color: #fff, $alpha: 0.2);
+
+    svg {
+      path {
+        fill: rgba($color: #fff, $alpha: 0.2);
+      }
+    }
+  }
+
+  svg {
     position: absolute;
     top: 50%;
     left: 8px;
 
-    width: 16px;
-    height: 16px;
-
-    background-color: $text-color-light;
-    border-radius: 50%;
     transform: translateY(-50%);
   }
 }

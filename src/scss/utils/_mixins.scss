@@ -10,3 +10,9 @@
   padding: 0;
   list-style: none;
 }
+
+@mixin new-outline {
+  outline: none;
+
+  box-shadow: 0 0 0 4px #2C6C98;
+}

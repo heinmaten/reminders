@@ -12,7 +12,9 @@
 .main-reminders__item,
 .main-reminders__item-edit {
   position: relative;
-  min-height: 32px;
+  min-height: 34px;
+
+  overflow: hidden;
 
   &::after {
     content: "";
@@ -28,8 +30,6 @@
 
 .main-reminders__item-wrapper {
   display: flex;
-  padding-top: 4px;
-  padding-bottom: 4px;
   padding-right: 4px;
 }
 
@@ -37,19 +37,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  margin-top: -4px;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
 
   cursor: pointer;
 }
 
 .main-reminders__item-checkbox {
   &:focus+.main-reminders__item-checkbox-icon {
-    box-shadow: 0 0 1px 4px #000,
-      0 0 1px 5px #147EFF,
-      0 0 1px 6px #fff;
+    @include new-outline;
   }
 
   &:checked+.main-reminders__item-checkbox-icon {
@@ -90,23 +87,53 @@
   justify-content: center;
   flex-grow: 1;
   min-width: 0;
+  padding: 6px 0;
+}
+
+.main-reminders__edit-button {
+  @include reset-button;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 100%;
+  height: 100%;
+  margin-right: auto;
+
+  color: $text-color-white;
+  text-align: left;
+  border-radius: 4px;
+
+  &:focus {
+    @include new-outline;
+  }
+}
+
+.main-reminders__item-reminder {
+  &:only-child {
+    margin-bottom: 0;
+  }
 }
 
 .main-reminders__item-reminder,
 .main-reminders__item-note {
+  width: 100%;
   margin: 0;
+  margin-bottom: 4px;
   padding: 4px;
   font-size: 13px;
 
+  text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .main-reminders__item-note {
+  margin-bottom: 1px;
   color: #AEAEAE;
 }
-
 
 .main-reminders__item-reminder-input,
 .main-reminders__item-note-input {
@@ -124,7 +151,7 @@
   caret-color: #fff;
 
   &:focus {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 2px #147EFF;
+    @include new-outline;
   }
 }
 
